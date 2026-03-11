@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\title{Machine Learning Project Submission (CS 6140)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\textbf{Instructor:} Prof. Smruthi Mukund
+
+\section*{a) Project Title}
+
+\textbf{U-Net: Implementation, Reproduction, and Empirical Analysis of Skip Connections for Biomedical Image Segmentation}
+
+\section*{b) Team Members}
+
+\textbf{Team Name:} The Overfitters
+
+\begin{center}
+\begin{tabular}{ll}
+\textbf{Name} & \textbf{Email} \\
+Ramyashree & ramyashree.f@northeastern.edu \\
+Ashwini Vitekar & vitekar.a@northeastern.edu \\
+Krishkumar Patel & patel.krishk@northeastern.edu \\
+\end{tabular}
+\end{center}
+
+\section*{c) Objectives and Significance}
+
+\subsection*{Goal of the Project}
+
+The goal of this project is to implement, reproduce, and empirically analyze the U-Net architecture proposed by Ronneberger, Fischer, and Brox (2015) for biomedical image segmentation.
+
+We will build U-Net from scratch in PyTorch and evaluate it on two publicly available biomedical datasets:
+
+\begin{itemize}
+\item Kaggle 2018 Data Science Bowl nuclei segmentation dataset
+\item DRIVE retinal vessel segmentation dataset
+\end{itemize}
+
+We will conduct a systematic ablation study to isolate the contribution of key architectural components. Specifically, we will:
+
+\begin{itemize}
+\item Remove and modify skip connections
+\item Vary encoder depth
+\item Compare concatenation vs.\ additive skip strategies
+\item Analyze gradient flow and convergence behavior
+\item Visualize intermediate feature maps
+\item Test performance under limited training data (10\%, 25\%, 50\%, 100\%)
+\end{itemize}
+
+A plain FCN baseline (encoder-decoder without skip connections) will serve as our comparison point. All models will be evaluated using the following metrics:
+
+\begin{itemize}
+\item Dice coefficient
+\item Intersection over Union (IoU)
+\item Pixel accuracy
+\item Precision
+\item Recall
+\end{itemize}
+
+\subsection*{Why It Is Important and Our Motivation}
+
+Biomedical image segmentation is a critical task in healthcare, requiring automated delineation of structures such as cells, nuclei, and blood vessels from microscopy and medical images.
+
+U-Net remains one of the most widely used architectures for this task, yet most implementations simply train the model and report accuracy without deeply investigating why its design choices work.
+
+Our motivation for choosing this paper is twofold:
+
+\begin{itemize}
+\item To deeply understand how U-Net’s architectural innovations — the symmetric encoder-decoder structure and skip connections — improve segmentation performance.
+\item To conduct empirical analysis through ablation experiments and controlled comparisons.
+\end{itemize}
+
+By systematically modifying and evaluating architectural components, we aim to provide a clearer understanding of which elements contribute most to U-Net’s success in biomedical segmentation tasks.
+
+\end{document}
